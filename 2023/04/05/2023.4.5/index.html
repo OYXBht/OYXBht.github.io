@@ -1,0 +1,654 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="oyxb_HT">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;training&#x2F;103#problems   打比赛被暴打了，深感基础没有打牢，于是现在开始刷洛谷基础题单。  三道相同思路的题目，给处理过的区域打上标记，遍历计数未处理区域。 校门外的树题目描述某校大门外长度为 l 的马路上有一排树，每两棵相邻的树之间的间隔都是 1 米。我们可以把马路看成一个数轴，马路的一端在数轴 0 的位置，另一端在 l 的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【luogu】二〇二三 四月三日">
+<meta property="og:url" content="http://example.com/2023/04/05/2023.4.5/index.html">
+<meta property="og:site_name" content="oyxb">
+<meta property="og:description" content="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;training&#x2F;103#problems   打比赛被暴打了，深感基础没有打牢，于是现在开始刷洛谷基础题单。  三道相同思路的题目，给处理过的区域打上标记，遍历计数未处理区域。 校门外的树题目描述某校大门外长度为 l 的马路上有一排树，每两棵相邻的树之间的间隔都是 1 米。我们可以把马路看成一个数轴，马路的一端在数轴 0 的位置，另一端在 l 的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-05T13:45:38.727Z">
+<meta property="article:modified_time" content="2023-04-05T14:31:09.942Z">
+<meta property="article:author" content="oyxb_HT">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>【luogu】二〇二三 四月三日 - oyxb</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【luogu】二〇二三 四月三日"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-04-05 21:45" pubdate>
+          2023年4月5日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          32 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【luogu】二〇二三 四月三日</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><em><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/training/103#problems">https://www.luogu.com.cn/training/103#problems</a></em>  </p>
+<p><em>打比赛被暴打了，深感基础没有打牢，于是现在开始刷洛谷基础题单。</em> </p>
+<p>三道相同思路的题目，给处理过的区域打上标记，遍历计数未处理区域。</p>
+<h2 id="校门外的树"><a href="#校门外的树" class="headerlink" title="校门外的树"></a>校门外的树</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>某校大门外长度为 l 的马路上有一排树，每两棵相邻的树之间的间隔都是 1 米。我们可以把马路看成一个数轴，马路的一端在数轴 0 的位置，另一端在 l 的位置；数轴上的每个整数点，即 0,1,2,…,l，都种有一棵树。</p>
+<p>由于马路上有一些区域要用来建地铁。这些区域用它们在数轴上的起始点和终止点表示。已知任一区域的起始点和终止点的坐标都是整数，区域之间可能有重合的部分。现在要把这些区域中的树（包括区域端点处的两棵树）移走。你的任务是计算将这些树都移走后，马路上还有多少棵树。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行有两个整数，分别表示马路的长度 l 和区域的数目 m。</p>
+<p>接下来 m 行，每行两个整数 u, v，表示一个区域的起始点和终止点的坐标。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出一行一个整数，表示将这些树都移走后，马路上剩余的树木数量。</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">500 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">150 </span><span class="hljs-number">300</span><br><span class="hljs-symbol">100 </span><span class="hljs-number">200</span><br><span class="hljs-symbol">470 </span><span class="hljs-number">471</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">298<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span><br>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span><br>    &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> input.nextInt();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> input.nextInt();<br>        <span class="hljs-type">int</span> arr[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[l + <span class="hljs-number">1</span>];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt;= l; i++)<br>        &#123;<br>           arr[i] = <span class="hljs-number">0</span>; <br>        &#125;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m; i++)<br>        &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">beg</span> <span class="hljs-operator">=</span> input.nextInt();<br>            <span class="hljs-type">int</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> input.nextInt();<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> beg; j &lt;= end; j++)<br>            &#123;<br>                arr[j] = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; l + <span class="hljs-number">1</span>; i++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(arr[i] == <span class="hljs-number">0</span>)<br>            &#123;<br>                n++;<br>            &#125;<br>        &#125;<br>        <br>        System.out.println(n);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="【Mc生存】插火把"><a href="#【Mc生存】插火把" class="headerlink" title="【Mc生存】插火把"></a>【Mc生存】插火把</h2><h3 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h3><p>初一党应该都知道……</p>
+<h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>话说有一天 linyorson 在“我的世界”开了一个 n * n 的方阵，现在他有 m 个火把和 k 个萤石，分别放在 (x_1, y_1) - (x_m, y_m) 和 (o_1, p_1) - (o_k, p_k) 的位置，没有光并且没放东西的地方会生成怪物。请问在这个方阵中有几个点会生成怪物？</p>
+<p>P.S. 火把的照亮范围是：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">|<span class="hljs-string">暗</span>|<span class="hljs-string">暗</span>|<span class="hljs-string"> 光 </span>|<span class="hljs-string">暗</span>|<span class="hljs-string">暗</span>|<br>|<span class="hljs-string">暗</span>|<span class="hljs-string">光</span>|<span class="hljs-string"> 光 </span>|<span class="hljs-string">光</span>|<span class="hljs-string">暗</span>|<br>|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<span class="hljs-string">火把</span>|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<br>|<span class="hljs-string">暗</span>|<span class="hljs-string">光</span>|<span class="hljs-string"> 光 </span>|<span class="hljs-string">光</span>|<span class="hljs-string">暗</span>|<br>|<span class="hljs-string">暗</span>|<span class="hljs-string">暗</span>|<span class="hljs-string"> 光 </span>|<span class="hljs-string">暗</span>|<span class="hljs-string">暗</span>|<br></code></pre></td></tr></table></figure>
+
+<p>萤石：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<span class="hljs-string"> 光 </span>|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<br>|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<span class="hljs-string"> 光 </span>|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<br>|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<span class="hljs-string">萤石</span>|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<br>|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<span class="hljs-string"> 光 </span>|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<br>|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<span class="hljs-string"> 光 </span>|<span class="hljs-string">光</span>|<span class="hljs-string">光</span>|<br></code></pre></td></tr></table></figure>
+
+<h3 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入共 m + k + 1 行。<br>第一行为 n, m, k。<br>第 2 到第 m + 1 行分别是火把的位置 x_i, y_i。<br>第 m + 2 到第 m + k + 1 行分别是萤石的位置 o_i, p_i。</p>
+<p>注：可能没有萤石，但一定有火把。</p>
+<h3 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h3><p>有几个点会生出怪物。</p>
+<h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">12<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;math.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> N 100 + 5</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-type">int</span> n,m,k;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;k);<br>    <span class="hljs-type">int</span> block[N][N];<br>    <span class="hljs-type">int</span> t = <span class="hljs-number">0</span>;<br><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; m; i++)<br>    &#123;<br>        <span class="hljs-type">int</span> x,y;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%d&quot;</span>,&amp;x,&amp;y);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = x - <span class="hljs-number">1</span>; j &lt;= x + <span class="hljs-number">1</span>; j++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k2 = y - <span class="hljs-number">1</span>; k2 &lt;= k + <span class="hljs-number">1</span>; k2++)<br>            &#123;<br>                block[j][k2] = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        block[x][<span class="hljs-built_in">abs</span>(y - <span class="hljs-number">2</span>)] = <span class="hljs-number">1</span>;<br>        block[x][y + <span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<br>        block[<span class="hljs-built_in">abs</span>(x - <span class="hljs-number">2</span>)][y] = <span class="hljs-number">1</span>;<br>        block[x + <span class="hljs-number">2</span>][y] = <span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; k; i++)<br>    &#123;<br>        <span class="hljs-type">int</span> x,y;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%d&quot;</span>,&amp;x,&amp;y);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = x - <span class="hljs-number">2</span>; j &lt;= x + <span class="hljs-number">2</span>; j++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k2 = y - <span class="hljs-number">2</span>; k2 &lt;= k + <span class="hljs-number">2</span>; k2++)<br>            &#123;<br>                block[j][k2] = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt;= n; i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt;= n; j++)<br>        &#123;<br>            <span class="hljs-keyword">if</span>(block[i][j] == <span class="hljs-number">0</span>) t++;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>,t);<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr>
+<h2 id="工艺品制作"><a href="#工艺品制作" class="headerlink" title="工艺品制作"></a>工艺品制作</h2><h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h3><p>现有一个长宽高分别为 w,x,h 组成的实心玻璃立方体，可以认为是由 1 * 1 * 1 的数个小方块组成的，每个小方块都有一个坐标  ( i,j,k ) 。现在需要进行 q 次切割。每次切割给出 (x_1,y_1,z_1),(x_2,y_2,z_2) 这 6 个参数，保证 x_1 &lt;&#x3D; x_2，y_1 &lt;&#x3D; y_2，z_1 &lt;&#x3D; z_2；每次切割时，使用激光工具切出一个立方体空洞，空洞的壁平行于立方体的面，空洞的对角点就是给出的切割参数的两个点。</p>
+<p>换句话说，所有满足  x_1 &lt;&#x3D; i &lt;&#x3D; x_2，y_1 &lt;&#x3D; j &lt;&#x3D; y_2 ，$z_1 &lt;&#x3D; k &lt;&#x3D; z_2 的小方块 (i,j,k) 的点都会被激光蒸发。例如有一个  4 * 4 * 4 的大方块，其体积为 64；给出参数 (1,1,1),(2,2,2) 时，中间的 8 块小方块就会被蒸发，剩下 56 个小方块。现在想知道经过所有切割操作后，剩下的工艺品还剩下多少格小方块的体积？</p>
+<h3 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行三个正整数 w,x,h。</p>
+<p>第二行一个正整数。</p>
+<p>接下来 $q$ 行，每行六个整数 (x_1,y_1,z_1),(x_2,y_2,z_2)。</p>
+<h3 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出一个整数表示答案。</p>
+<h3 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">4 </span><span class="hljs-number">4</span> <span class="hljs-number">4</span><br><span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">56<br></code></pre></td></tr></table></figure>
+
+<p>数据保证，1 &lt;&#x3D; w,x,h &lt;&#x3D; 20，1 &lt;&#x3D; q &lt;&#x3D; 100。1 &lt;&#x3D; x_1 &lt;&#x3D; x_2 &lt;&#x3D; w，1 &lt;&#x3D; y_1 &lt;&#x3D; y_2 &lt;&#x3D; x，1 &lt;&#x3D; z_1 &lt;&#x3D; z_2 &lt;&#x3D; h。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Scanner;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span><br>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span><br>    &#123;<br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">input</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> input.nextInt();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> input.nextInt();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">h</span> <span class="hljs-operator">=</span> input.nextInt();<br>        <span class="hljs-type">int</span> block[][][] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[m][x][h];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">q</span> <span class="hljs-operator">=</span> input.nextInt();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; q; i++)<br>        &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">x1</span> <span class="hljs-operator">=</span> input.nextInt();<br>            <span class="hljs-type">int</span> <span class="hljs-variable">y1</span> <span class="hljs-operator">=</span> input.nextInt();<br>            <span class="hljs-type">int</span> <span class="hljs-variable">z1</span> <span class="hljs-operator">=</span> input.nextInt();<br>            <span class="hljs-type">int</span> <span class="hljs-variable">x2</span> <span class="hljs-operator">=</span> input.nextInt();<br>            <span class="hljs-type">int</span> <span class="hljs-variable">y2</span> <span class="hljs-operator">=</span> input.nextInt();<br>            <span class="hljs-type">int</span> <span class="hljs-variable">z2</span> <span class="hljs-operator">=</span> input.nextInt();<br><br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> x1; j &lt;= x2; j++)<br>            &#123;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> y1; k &lt;= y2; k++)<br>                &#123;<br>                    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> z1; l &lt;= z2; l++)<br>                    &#123;<br>                        block[j][k][l] = <span class="hljs-number">1</span>;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m; i++)<br>        &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; x; j++)<br>            &#123;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; h; k++)<br>                &#123;<br>                    <span class="hljs-keyword">if</span>(block[i][j][k] == <span class="hljs-number">0</span>) n++;<br>                &#125;<br>            &#125;<br>        &#125;<br><br>        System.out.println(n);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【luogu】二〇二三 四月三日</div>
+      <div>http://example.com/2023/04/05/2023.4.5/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>oyxb_HT</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年4月5日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/03/17/%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99/" title="【IMAUOJ】单词接龙">
+                        <span class="hidden-mobile">【IMAUOJ】单词接龙</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
