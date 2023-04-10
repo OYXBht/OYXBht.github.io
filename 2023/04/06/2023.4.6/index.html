@@ -24,7 +24,7 @@
 <meta property="og:description" content="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;training&#x2F;103#problems   【P2615】神奇的幻方题目描述幻方是一种很神奇的 N * N 矩阵：它由数字 1,2,3,…,N * N 构成，且每行、每列及两条对角线上的数字之和都相同。 当 N 为奇数时，我们可以通过下方法构建一个幻方： 首先将 1 写在第一行的中间。 之后，按如下方式从小到大依次填写每个数 K (K&amp;#x3D">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-06T14:36:54.172Z">
-<meta property="article:modified_time" content="2023-04-06T15:00:58.024Z">
+<meta property="article:modified_time" content="2023-04-10T12:00:41.515Z">
 <meta property="article:author" content="oyxb_HT">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -279,8 +279,8 @@
 <p>首先将 1 写在第一行的中间。</p>
 <p>之后，按如下方式从小到大依次填写每个数 K (K&#x3D;2,3,…,N * N) ：</p>
 <ol>
-<li>若 (K-1) 在第一行但不在最后一列，则将 $K$ 填在最后一行， (K-1) 所在列的右一列；</li>
-<li>若 (K-1) 在最后一列但不在第一行，则将 $K$ 填在第一列， (K-1) 所在行的上一行；</li>
+<li>若 (K-1) 在第一行但不在最后一列，则将 K 填在最后一行， (K-1) 所在列的右一列；</li>
+<li>若 (K-1) 在最后一列但不在第一行，则将 K 填在第一列， (K-1) 所在行的上一行；</li>
 <li>若 (K-1) 在第一行最后一列，则将 K 填在 (K-1) 的正下方；</li>
 <li>若 (K-1) 既不在第一行，也不在最后一列，如果 (K-1) 的右上方还未填数，则将 $K$ 填在 $(K-1)$ 的右上方，否则将 K 填在 (K-1) 的正下方。</li>
 </ol>
