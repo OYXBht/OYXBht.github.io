@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=light>
 
 
 
@@ -24,7 +24,7 @@
 <meta property="og:description" content="在这里记录几种html标签，方便记忆与以后查找。随着学习以后可能会有补充。 html骨架一个html文档的标准格式如下： 12345678910&lt;!DOCTYPE html&gt; &lt;html&gt;&lt;head&gt;    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;    &lt;title&gt;...&lt;&#x2F;title&gt;&lt;&#x2F;h">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-11T12:11:40.596Z">
-<meta property="article:modified_time" content="2023-05-19T11:37:32.322Z">
+<meta property="article:modified_time" content="2023-05-19T11:41:57.342Z">
 <meta property="article:author" content="oyxb_HT">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -418,7 +418,7 @@
 </ul>
 <h3 id="label-标签"><a href="#label-标签" class="headerlink" title="label 标签"></a><strong>label</strong> 标签</h3><p>用于绑定网页内容与表单选项的关系，例如点击文本可直接选定对应绑定的选项<br>两种使用方法：</p>
 <ul>
-<li>为表单选项填写一个 <strong>id</strong> 属性，使用 <strong>&lt;lable&gt;</strong> 标签包裹绑定文本，在<strong>for</strong>属性后填写相同的<strong>id</strong>属性<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html">选择城市：<br>北京<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;city&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;bj&quot;</span>&gt;</span><br>广东<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;city&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;gd&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;bj&quot;</span>&gt;</span>我是北方人<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;gd&quot;</span>&gt;</span>我是南方人<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li>为表单选项填写一个 <strong>id</strong> 属性，使用 <strong>&lt;lable&gt;</strong> 标签包裹绑定文本，并在<strong>for</strong>属性后填写相同的 <strong>id</strong> 属性<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html">选择城市：<br>北京<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;city&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;bj&quot;</span>&gt;</span><br>广东<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;city&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;gd&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;bj&quot;</span>&gt;</span>我是北方人<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;gd&quot;</span>&gt;</span>我是南方人<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 <li>直接使用<strong>&lt;lable&gt;</strong> 标签包裹要绑定的文本和表单选项<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html">性别：<br><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>男<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>女<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 
